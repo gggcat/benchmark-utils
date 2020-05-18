@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  grey_site:
+    container_name: grey
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - "80:80"
+  blue_site:
+    container_name: blue
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - "1080:80"
+    environment:
+      COLOR: "#04C9E8"
+  green_site:
+    container_name: green
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - "2080:80"
+    environment:
+      COLOR: "#08e804"
+  red_site:
+    container_name: red
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - "3080:80"
+    environment:
+      COLOR: "#DE424C"
+
+
+
